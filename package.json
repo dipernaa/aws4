@@ -69,7 +69,7 @@
     "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
   },
   "dependencies": {
-    "crypto-browserify": "^3.11.0",
+    "crypto-js": "^3.1.9-1",
     "querystring-browser": "^1.0.4",
     "url": "^0.11.0"
   }
