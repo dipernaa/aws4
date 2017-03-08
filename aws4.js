@@ -2,7 +2,7 @@ var aws4 = exports,
     browserBuffer = require('buffer/').Buffer,
     url = require('url'),
     querystring = require('querystring-browser'),
-    crypto = require('crypto-js'),
+    crypto = require('crypto'),
     lru = require('./lru'),
     credentialsCache = lru(1000)
 
