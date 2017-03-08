@@ -78,7 +78,7 @@ buffer@^5.0.5:
     base64-js "^1.0.2"
     ieee754 "^1.1.4"
 
-cipher-base@^1.0.0, cipher-base@^1.0.1:
+cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/cipher-base/-/cipher-base-1.0.3.tgz#eeabf194419ce900da3018c207d212f2a6df0a07"
   dependencies:
@@ -117,18 +117,22 @@ create-hmac@^1.1.0, create-hmac@^1.1.2:
 
 "crypto-browserify@https://github.com/dipernaa/crypto-browserify.git":
   version "3.11.0"
-  resolved "https://github.com/dipernaa/crypto-browserify.git#eab266b17030153948485a58e6c7eadb4d2141e1"
+  resolved "https://github.com/dipernaa/crypto-browserify.git#4b4e8207600a2500e2393f1dd9cee86eb4928bb2"
   dependencies:
     browserify-cipher "^1.0.0"
     browserify-sign "^4.0.0"
+    buffer "^5.0.5"
+    cipher-base "^1.0.3"
     create-ecdh "^4.0.0"
     create-hash "^1.1.0"
     create-hmac "^1.1.0"
     diffie-hellman "^5.0.0"
-    inherits "^2.0.1"
+    inherits "^2.0.3"
     pbkdf2 "^3.0.3"
     public-encrypt "^4.0.0"
     randombytes "^2.0.0"
+    ripemd160 "^2.0.1"
+    sha.js "^2.4.8"
 
 debug@2.2.0:
   version "2.2.0"
@@ -188,6 +192,12 @@ growl@1.9.2:
   version "1.9.2"
   resolved "https://registry.yarnpkg.com/growl/-/growl-1.9.2.tgz#0ea7743715db8d8de2c5ede1775e1b45ac85c02f"
 
+hash-base@^2.0.0:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/hash-base/-/hash-base-2.0.2.tgz#66ea1d856db4e8a5470cadf6fce23ae5244ef2e1"
+  dependencies:
+    inherits "^2.0.1"
+
 hash.js@^1.0.0, hash.js@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/hash.js/-/hash.js-1.0.3.tgz#1332ff00156c0a0ffdd8236013d07b77a0451573"
@@ -206,7 +216,7 @@ ieee754@^1.1.4:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.1.8.tgz#be33d40ac10ef1926701f6f08a2d86fbfd1ad3e4"
 
-inherits@2, inherits@^2.0.1:
+inherits@2, inherits@^2.0.1, inherits@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
 
@@ -322,7 +332,14 @@ ripemd160@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/ripemd160/-/ripemd160-1.0.1.tgz#93a4bbd4942bc574b69a8fa57c71de10ecca7d6e"
 
-sha.js@^2.3.6:
+ripemd160@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/ripemd160/-/ripemd160-2.0.1.tgz#0f4584295c53a3628af7e6d79aca21ce57d1c6e7"
+  dependencies:
+    hash-base "^2.0.0"
+    inherits "^2.0.1"
+
+sha.js@^2.3.6, sha.js@^2.4.8:
   version "2.4.8"
   resolved "https://registry.yarnpkg.com/sha.js/-/sha.js-2.4.8.tgz#37068c2c476b6baf402d14a49c67f597921f634f"
   dependencies:
