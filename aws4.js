@@ -2,18 +2,32 @@ var aws4 = exports,
     browserBuffer = require('buffer/').Buffer,
     url = require('url'),
     querystring = require('querystring-browser'),
-    browserCrypto = require('crypto-browserify'),
+    CryptoJS = require('crypto-js'),
     lru = require('./lru'),
     credentialsCache = lru(1000)
 
 // http://docs.amazonwebservices.com/general/latest/gr/signature-version-4.html
 
 function hmac(key, string, encoding) {
-  return browserCrypto.createHmac('sha256', key).update(string, 'utf8').digest(encoding)
+  // old
+  // return CryptoJS.createHmac('sha256', key).update(string, 'utf8').digest(encoding)
+
+  // When you pass a string, it's automatically converted to a WordArray encoded as UTF-8.
+  var firstStep = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA256, key).update(string).finalize();
+
+  // encoding is always hex, so lol
+  return firstStep.toString(CryptoJS.enc.Hex);
 }
 
 function hash(string, encoding) {
-  return browserCrypto.createHash('sha256').update(string, 'utf8').digest(encoding)
+  // old
+  // return CryptoJS.createHash('sha256').update(string, 'utf8').digest(encoding)
+
+  // When you pass a string, it's automatically converted to a WordArray encoded as UTF-8.
+  var firstStep = CryptoJS.algo.SHA256.create().update(string).finalize();
+
+  // encoding is always hex, so lol
+  return firstStep.toString(CryptoJS.enc.Hex);
 }
 
 // This function assumes the string has already been percent encoded
