@@ -16,6 +16,10 @@ function hmac(key, string, encoding) {
   var firstStep = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA256, key).update(string).finalize();
 
   // encoding is always hex, so lol
+  if (!encoding) {
+    return firstStep;
+  }
+
   return firstStep.toString(CryptoJS.enc.Hex);
 }
 
